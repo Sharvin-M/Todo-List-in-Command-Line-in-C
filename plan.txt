@@ -1,0 +1,13 @@
+user should call cmd with 3 potential arguements:
+
+ls
+------
+  list the current tasks
+
+add
+------
+  adds the following string provided by user to the todo list
+
+delete + # 
+----
+  deletes the task based on task number provided 
