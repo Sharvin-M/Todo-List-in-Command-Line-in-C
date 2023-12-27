@@ -6,20 +6,24 @@ int main(int argc, char *argv[]) {
   char newTask[] = "";
   if (argc <= 0) {
     printf("%s", "ERROR: Missing Arguement");
+    return 0;
   } else {
-
-    for (int i = 0; i < (argc - 1); i++) {
-      if (strcmp(argv[i], "ls")) {
-        if (fgets(newTask, sizeof(buffer), stdin) != NULL) {
-          printf("%s %s", "new task added:", newTask);
-          taskCount++;
-        } else if (strcmp(argv[i], "add")) {
-        }
-        // add task
-      } else if (strcmp(argv[i], "delete")) {
-        // delete tasks
+    if (strcmp(argv[2], "l")) {
+      printf("%s", "Current Tasks Todo:");
+      for (int j = 0; j < sizeof(newTask); j++) {
+        printf("%c", newTask[j]);
       }
     }
-    return 0;
+    if (strcmp(argv[2], "a")) {
+      if (fgets(newTask, sizeof(buffer), stdin) != NULL) {
+        printf("%s %s", "new task added:\0", newTask);
+        taskCount++;
+      }
+      // add task
+    }
+    if (strcmp(argv[2], "d")) {
+      // delete tasks
+    }
   }
+  return 0;
 }
