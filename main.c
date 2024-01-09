@@ -1,12 +1,20 @@
 #include <stdio.h>
-char input[100];
+#include <string.h>
+
+void delete()
+{
+  char input[100];
+  printf("Enter the input: ");
+  fgets(input, sizeof(input), stdin);
+  printf("Input: %s", input);
+}
 
 void ls()
 {
-  for (int i = 0; i < 100; i++)
-  {
-    printf(input[i]);
-  }
+  char input[100];
+  printf("Enter the input: ");
+  fgets(input, sizeof(input), stdin);
+  printf("Input: %s", input);
 }
 
 void add()
@@ -19,11 +27,11 @@ void add()
 
 int main(int argc, char *argv[])
 {
-  if (strcmp(argv[1], "delete"))
+  if (&argv[1] == "delete")
   {
     delete ();
   }
-  else if (argv[1] == "add")
+  else if (&argv[1] == "add")
   {
     add();
   }
