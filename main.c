@@ -1,7 +1,34 @@
 #include <stdio.h>
-#include <string.h>
-// int main(int argc, char *argv[]) {
+char input[100];
 
-int main(void) {
-  printf("Hello World\n");
+void ls()
+{
+  for (int i = 0; i < 100; i++)
+  {
+    printf(input[i]);
+  }
+}
+
+void add()
+{
+  char input[100];
+  printf("Enter the input: ");
+  fgets(input, sizeof(input), stdin);
+  printf("Input: %s", input);
+}
+
+int main(int argc, char *argv[])
+{
+  if (strcmp(argv[1], "delete"))
+  {
+    delete ();
+  }
+  else if (argv[1] == "add")
+  {
+    add();
+  }
+  else
+  {
+    ls();
+  }
 }
